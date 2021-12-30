@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+
+  <title>
+    Achyuta Nand Jha | Data Scientist in Seattle, US
+  </title>
+
+  <meta name="description" content="Description of skills">
+  <meta name="keywords" content="Put your name, skills and some coding keywords" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- ***** Header ***** -->
+
+  <header class="header" role="banner" id="top">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <ul class="nav__items">
+          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+          <li class="nav__item"><a href="#clients" class="nav__link">Companies</a></li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__text-box row">
+      <div class="header__text">
+        <h1 class="heading-primary">
+
+            <span>Achyuta Nand Jha</span>
+        </h1>
+        
+        <p>Data Scientist with travel and financial industry experience.</p>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+
+    <!-- ***** Work ***** -->
+
+    <section class="work" id="work">
+      <div class="row">
+        <h2>My Work</h2>
+        <div class="work__boxes">
+
+          <div class="work__box">
+              <table>
+              <tr>
+                  <td>
+            <div class="work__text">
+              <h3>Projects</h3>
+               <h4 style="font-size:30px";>Egencia, an Expedia Group Company</h4>    
+              <ul>
+                  <li><u style="font-size:25px";>Hotel Sort: 'SmartMix v2.1'</u>
+                <ul>
+                    <li>Data Science
+              <ul class="work__list">
+                  <li><b>SmartMix</b>: This was the main project for hotel sort model responsible for displaying hotels on search page based on user profile and company preferences.</li>
+                <li>Since significant percentage of hotel bookings happen within top 10 displayed to users, lead the initiative to deploy LightGBM model, optimized for ranking metric NDCG, for hotel sort replacing RandomForest after thorough comparison of different metrics and calibration curve.</li>
+                  <li>The model was A/B tested and resulted in <b>4%</b> increased booking percentage for bookings within top 3 displayed hotels of search pages.</li>
+              </ul>
+                    </li>
+                <li>Machine Learning Engineering
+              <ul class="work__list">
+                  <li>During the deployment of the model, a lot of discrepancies around feature calculation surfaced in the shadow validation phase.</li>
+                <li>Working with engineering team, four of such features were diagnosed as incorrectly being computed while logging the hotel booking data. This cleared up path for any blockers for deployment in future.</li>
+                </ul>
+                    </li>
+                  </ul>
+                      </li>
+                  <li><p style="font-size:25px";><u>Hotel Monitoring Dashboard</u></p>
+                  <ul class="work__list">
+                      <li>Initiated a model monitoring dashboard effort with Machine Learning Engineering team to observe any deployed hotel sort models’ performance for hotel bookings made within top N positions of search page across various pivots. </li>
+                      <li>Airflow pipeline is triggered daily utilizing an ETL script using Apache Spark to pull data from Snowflake and Amazon S3 to produce data for monitoring model performance on a daily basis and dumping to Snowflake table. </li>
+                      <li>The Tableau dashboard is currently in production and used frequently by Product and Tech team and gave opportunity to stem out an analysis for an anomalous observation. </li>
+                  </ul>
+                      </li>
+                  <li><p style="font-size:25px";><u>NPS Survey Analysis</u></p>
+                  <ul class="work__list">
+                      <li>In an effort to boost NPS scores, the use of WordClouds and LDA topic-modeling on the verbatim comments of Travel Managers and Travelers in NPS Survey, brought to light potential pain points.</li>
+                      <li>With the use of above pointers, various transaction level data sources were married to cross validate the hypothesis and eventually helped to carve out action items relating to online experience, payment systems and inventory management. </li>
+                      <li>Drilling deeper into the online behaviour, Adobe Omniture was used to summarize, in plots, the most commonly encountered web errors across different LOBs and gained traction with Product team to highlight areas of improvement to boost NPS scores. </li>
+                  </ul>
+                      </li> 
+                  <li><p style="font-size:25px";><u>Hotel Sort Model Feature Exploration/Model Tuning</u></p>
+                  <ul class="work__list">
+                      <li>Evaluted opportunities with LightGBM as replacement of currently deployed RandomForest model, placing emphasis on optimizing model for ranking metric. This lead to discussions with Product team to replace the currently deployed model.</li>
+                      <li>Optimized currently deployed RandomForest model with stratified imputation and best set of parameters with a lift in AUC score by 2.41%.</li>
+                  </ul>
+                      </li> 
+                  <li><p style="font-size:25px";><u>Flight-Hotel Attach</u></p>
+                  <ul class="work__list">
+                      <li>Working with voluminous transaction-level data in Adobe Omniture, and carrying out various ETL operations for funnel analysis of hotel attach, came up with intuitive visualizations to report user behaviours. From these, stemmed pointers for UX team to try A/B tests to boost user engagement on our website.</li>
+                      <li>Logging of brand loyalty came as a call to action for boosting hotel attach.</li>
+                  </ul>
+                      </li> 
+                </ul>
+                <h4 style="font-size:30px";>Bank of New York Mellon Technology</h4>
+                <ul>
+                    <li><p style="font-size:25px";><u>Operational Risk Events</u></p>
+                  <ul class="work__list">
+                      <li>Key-phrases extracted from error log paragraphs and binned to 7 pre-defined categories using Sentence2Vec and ANNOY. Leading on end-to-end workflow resulted in project recover revenue of ~$60Million USD.</li>
+                  </ul>
+                      </li> 
+                    <li><p style="font-size:25px";><u>Revenue Leakage Audit Platform</u></p>
+                  <ul class="work__list">
+                      <li>Template detection and extraction of fee and related computation phrases using K-means, N.E.R. and ‘dcoref’. Leakage reported for disparity of final charge with the original charged to BNY Mellon clients.</li>
+                  </ul>
+                      </li> 
+                </ul>
+                <h3>Internships</h3>
+                    <ul>
+                <li><b>UiPath Inc</b>
+                  <ul class="work__list">
+                      <li>Worked on Inventory Management use-case with use of LightGBM and LSTM for the forecast of products facing a hike in demand next week along with exact units in hike.</li> 
+                      <li>The serving model was presented to one of the largest retail customers in the Middle East leading to final purchase.</li>
+                  </ul>
+                      </li> 
+                <li><b>Penn State University</b>
+                  <ul class="work__list">
+                      <li>Worked on research project by analysing multivariate time-series data, using Bayesian Neural Networks to predict cryptocurrency rates also involving Deep Learning techniques. </li>
+                  </ul>
+                      </li> 
+                <li><b>Bank of New York Mellon Technology</b>
+                  <ul class="work__list">
+                      <li>Using d3.js, developed a dashboard, that was integrated to company’s in-house tool to track the flow of funds across different stages.. The project aided in a permanent opportunity at the company.</li>
+                  </ul>
+                      </li>         
+                </ul>
+                
+                <h3>Graduate School - Academic Projects</h3>
+                    <ul>
+                <li><b>Analysis on Facebook Page Metrics</b>
+                  <ul class="work__list">
+                      <li>E.D.A., 1 Sample Z-Test and Hypotheses testing for key performance indicators (KPIs) believed to influence the success of posts on Facebook page of a Cosmetic Brand for year 2014.</li>
+                  </ul>
+                      </li> 
+                <li><b>Musical Face</b>
+                  <ul class="work__list">
+                      <li>Deep Learning project from the ground up, using sophisticated CNN and RNN models to play songs on Spotify based on the expression of the user.</li>
+                  </ul>
+                      </li> 
+                <li><b>SF Crime Classification</b>
+                  <ul class="work__list">
+                      <li>Performed analysis and prediction on data released by San Francisco government to classify crime resolution using RandomForest, LightGBM, and GridesearchCV techniques. Result is useful to prioritize crime based on historical trend of data.</li>
+                  </ul>
+                      </li>         
+                </ul>
+              
+            </div>
+              </td>
+              <td class="wordcloud_divs">
+              
+            <div class="work__image-box">
+                <table>
+                    <tr>
+                        <td>
+                <img src="./images/skills_wc.png" class="work__image" alt="Skills" />
+                            <p><i>Figure: Skills extensively used</i></p>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td>
+                <img src="./images/tools_wc.png" class="work__image" alt="Tools" />
+                        <p><i>Figure: Tools extensively used</i></p>
+                        </td>
+                        </tr>
+
+                </table>
+            </div>
+                  </td>  
+              </tr>
+                  </table>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Databases</h3>
+              <p>
+                Databases or file formats used for executing direct SQL queries or connecting via Spark for ETL operations
+              </p>
+              <ul class="work__list">
+                <li>Amazon S3/Parquet files</li>
+                <li>AWS Athena</li>
+                <li>AWS Redshift</li>
+                <li>Snowflake</li>
+                <li>HDFS</li>
+              </ul>
+
+             
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="client" id="clients">
+      <div class="row">
+        <h2>Companies</h2>
+        <div class="client__logos">
+          <img src="./images/egencia.jpeg" class="client__logo" alt="Company 2" />
+          <img src="./images/uipath.png" class="client__logo" alt="Company 3" />
+          <img src="./images/BNY_Mellon.png" class="client__logo" alt="Company 1" />
+          <img src="./images/tata_steel.jpeg" class="client__logo" alt="Company 1" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ***** About ***** -->
+
+    <section class="about" id="about">
+      <div class="row">
+        <h2>About Me</h2>
+          
+        <div class="about__content">
+            <table>
+              <tr>
+                  <td>
+          <div class="about__text">
+            <p>
+              Data Scientist staying close to the nature in Pudget sound focused on data driven decision making. Masters in Data Analytics carved out the path to look into statistics while maintaining abstraction of business into statistical modeling.
+                
+            </p>
+          </div>
+                </td>
+                      <td>
+          <div class="about__photo-container">
+            <img class="about__photo" src="./images/northern_cascade.jpeg" alt="" />
+          </div>
+              </td>
+                  </tr>
+              </table>
+            </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ***** Contact ***** -->
+
+  <section class="contact" id="contact">
+    <div class="row">
+      <h2>Get in Touch</h2>
+      <div class="contact__info">
+        <p>
+          
+        </p>
+        <a href="mailto:26achyutanandjha@gmail.com" class="btn">26achyutanandjha@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ***** Footer ***** -->
+
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <!-- Update the links to point to your accounts -->
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://twitter.com/jha_achyuta/" title="Link to Twitter Profile">
+            <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://github.com/achyuta26/" title="Link to Github Profile">
+            <img src="./images/github.svg" class="footer__social-image" alt="Github">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.linkedin.com/in/achyuta-nand-jha/">
+            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" title="Back to Top">
+    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
+  </a>
+  <script src="./index.js"></script>
+</body>
+
+</html>
