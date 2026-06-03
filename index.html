@@ -1,313 +1,1016 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+  <meta name="description" content="Achyuta Nand Jha — Senior Machine Learning Engineer in Seattle. 11 years building production AI systems in travel and financial services." />
+  <meta name="keywords" content="Achyuta Nand Jha, Senior Machine Learning Engineer, GenAI, LLM, DSPy, Agentic AI, Seattle, AmexGBT, Egencia, Expedia" />
+  <title>Achyuta Nand Jha | Senior ML Engineer · Seattle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <title>
-    Achyuta Nand Jha | Data Scientist in Seattle, US
-  </title>
+    :root {
+      --ink: #0f0e0c;
+      --ink-mid: #4a4845;
+      --ink-soft: #8a8780;
+      --bg: #f9f7f2;
+      --bg-card: #ffffff;
+      --rule: #e2dfd8;
+      --accent: #1a5c3a;
+      --accent-light: #e8f3ec;
+      --accent-mid: #2d7a52;
+      --gold: #c9902a;
+      --gold-light: #fdf4e3;
+      --blue: #1c4a7a;
+      --blue-light: #e8f0fa;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  <meta name="description" content="Description of skills">
-  <meta name="keywords" content="Put your name, skills and some coding keywords" />
-  <link rel="stylesheet" href="index.css" />
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(249,247,242,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--ink-mid);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 4rem;
+      align-items: end;
+    }
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-mid);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--ink-mid);
+      max-width: 540px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+    .hero-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 100px;
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: 1.5px solid var(--accent);
+    }
+    .btn-primary:hover { background: #14472e; border-color: #14472e; }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--rule);
+    }
+    .btn-outline:hover { border-color: var(--ink-soft); background: var(--bg-card); }
+
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+    }
+    .stat-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .stat-label { font-size: 0.8rem; color: var(--ink-soft); letter-spacing: 0.03em; }
+    .stat-divider { height: 1px; background: var(--rule); }
+
+    /* ── Section shell ── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1.25rem;
+    }
+    .section-header h2 {
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .section-num {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    /* ── Experience timeline ── */
+    #experience { background: var(--bg-card); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .timeline-entry:last-child { border-bottom: none; }
+    .tl-meta { padding-top: 0.15rem; }
+    .tl-company {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+    .tl-period {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.02em;
+    }
+    .tl-badge {
+      display: inline-block;
+      margin-top: 0.6rem;
+      padding: 0.22rem 0.7rem;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+    .tl-content {}
+    .tl-role {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .tl-projects { display: flex; flex-direction: column; gap: 1.25rem; }
+    .tl-project {}
+    .tl-project-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-mid);
+      margin-bottom: 0.35rem;
+    }
+    .tl-project p {
+      font-size: 0.9rem;
+      color: var(--ink-mid);
+      line-height: 1.65;
+    }
+    .tl-impact {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--gold);
+      background: var(--gold-light);
+      padding: 0.2rem 0.7rem;
+      border-radius: 100px;
+    }
+
+    /* ── Projects grid ── */
+    #work { background: var(--bg); }
+    .projects-group { margin-bottom: 3.5rem; }
+    .projects-group:last-child { margin-bottom: 0; }
+    .group-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .group-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--card-accent, var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .project-card:hover { border-color: #c8c4bc; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .project-card:hover::before { transform: scaleX(1); }
+    .card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.7rem;
+      border-radius: 100px;
+      background: var(--tag-bg, var(--accent-light));
+      color: var(--tag-color, var(--accent));
+      width: fit-content;
+    }
+    .project-card h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+    .project-card p {
+      font-size: 0.875rem;
+      color: var(--ink-mid);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .card-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    .metric-pill {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--ink-mid);
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      padding: 0.18rem 0.65rem;
+      border-radius: 100px;
+    }
+    .metric-pill.highlight {
+      background: var(--gold-light);
+      border-color: #f0d89a;
+      color: #7a5c10;
+    }
+
+    /* ── Skills ── */
+    #skills { background: var(--ink); color: #fff; }
+    #skills .section-header h2 { color: #fff; }
+    #skills .section-num { color: #666; }
+    #skills .section-header { border-bottom-color: #2a2a28; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .skill-group {
+      background: #1a1a18;
+      border: 1px solid #2a2a28;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+    .skill-group-name {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1rem;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skill-tag {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: #ccc;
+      background: #222220;
+      border: 1px solid #2e2e2c;
+      padding: 0.22rem 0.7rem;
+      border-radius: 100px;
+    }
+
+    /* ── Companies ── */
+    #clients { background: var(--bg-card); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .companies-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+    .company-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .company-logo {
+      height: 40px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      filter: grayscale(1) opacity(0.6);
+      transition: filter var(--transition);
+    }
+    .company-logo:hover { filter: grayscale(0) opacity(1); }
+    .company-name {
+      font-size: 0.7rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    /* Fallback text logo for missing images */
+    .company-text-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      letter-spacing: -0.01em;
+      transition: color var(--transition);
+    }
+    .company-text-logo:hover { color: var(--ink); }
+
+    /* ── About ── */
+    #about { background: var(--bg); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-text h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .about-text p {
+      font-size: 0.95rem;
+      color: var(--ink-mid);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: var(--radius);
+      display: block;
+    }
+    .about-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: var(--radius);
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-photo-placeholder span {
+      font-family: var(--serif);
+      font-size: 4rem;
+      color: var(--accent-mid);
+      opacity: 0.5;
+    }
+
+    /* ── Contact ── */
+    #contact { background: var(--bg-card); border-top: 1px solid var(--rule); }
+    .contact-inner { max-width: 600px; }
+    .contact-inner h2 {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .contact-inner p { color: var(--ink-mid); margin-bottom: 2rem; }
+    .contact-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--ink);
+      color: #888;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; padding: 4rem 1.5rem 3rem; gap: 2.5rem; }
+      .hero-stats { flex-direction: row; flex-wrap: wrap; }
+      .timeline-entry { grid-template-columns: 1fr; gap: 0.75rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      section { padding: 3.5rem 1.5rem; }
+      .companies-row { gap: 2rem; }
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero h1 { animation: fadeUp 0.7s ease both; }
+    .hero-desc { animation: fadeUp 0.7s 0.1s ease both; }
+    .hero-links { animation: fadeUp 0.7s 0.2s ease both; }
+    .hero-stats { animation: fadeUp 0.7s 0.15s ease both; }
+  </style>
 </head>
-
 <body>
 
-  <!-- ***** Header ***** -->
+<!-- ── Navigation ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Achyuta Nand Jha</a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <header class="header" role="banner" id="top">
-    <div class="row">
-      <nav class="nav" role="navigation">
-        <ul class="nav__items">
-          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-          <li class="nav__item"><a href="#clients" class="nav__link">Companies</a></li>
-          <li class="nav__item">
-            <a href="#about" class="nav__link">About</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">Contact</a>
-          </li>
-        </ul>
-      </nav>
+<!-- ── Hero ── -->
+<div class="hero">
+  <div>
+    <p class="hero-eyebrow">Senior Machine Learning Engineer · Seattle, WA</p>
+    <h1>Building AI systems<br><em>that ship to production</em></h1>
+    <p class="hero-desc">
+      11 years designing and operating ML systems at scale across travel and financial services —
+      from agentic AI platforms and LLM evaluation frameworks to ranking, recommendation, and model monitoring.
+    </p>
+    <div class="hero-links">
+      <a href="https://www.linkedin.com/in/achyuta-nand-jha/" target="_blank" class="btn btn-primary">LinkedIn</a>
+      <a href="https://github.com/achyuta26" target="_blank" class="btn btn-outline">GitHub</a>
+      <a href="mailto:26achyutanandjha@gmail.com" class="btn btn-outline">Email</a>
     </div>
-    <div class="header__text-box row">
-      <div class="header__text">
-        <h1 class="heading-primary">
-
-            <span>Achyuta Nand Jha</span>
-        </h1>
-        
-        <p>Data Scientist with travel and financial industry experience.</p>
-      </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-num">11</span>
+      <span class="stat-label">Years in production ML</span>
     </div>
-  </header>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">15K+</span>
+      <span class="stat-label">Daily AI agent requests served</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">717K+</span>
+      <span class="stat-label">Daily searches influenced</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">$60M+</span>
+      <span class="stat-label">Business value delivered</span>
+    </div>
+  </div>
+</div>
 
-  <main role="main">
+<!-- ── Experience ── -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
 
-    <!-- ***** Work ***** -->
-
-    <section class="work" id="work">
-      <div class="row">
-        <h2>My Work</h2>
-        <div class="work__boxes">
-
-          <div class="work__box">
-              <table>
-              <tr>
-                  <td>
-            <div class="work__text">
-              <h3>Projects</h3>
-               <h4 style="font-size:30px";>Egencia, an Expedia Group Company</h4>    
-              <ul>
-                  <section class="smartmix" id="smartmix">
-                  <li><u style="font-size:25px";>Hotel Sort: 'SmartMix v2.1'</u>
-                <ul>
-                    <li>Data Science
-              <ul class="work__list">
-                  
-                  <li><b>SmartMix</b>: This was the main project for hotel sort model responsible for displaying hotels on search page based on user profile and company preferences.</li>
-                <li>Since significant percentage of hotel bookings happen within top 10 displayed to users, lead the initiative to deploy LightGBM model, optimized for ranking metric NDCG, for hotel sort replacing RandomForest after thorough comparison of different metrics and calibration curve.</li>
-                  <li>The model was A/B tested and resulted in <b>4%</b> increased booking percentage for bookings within top 3 displayed hotels of search pages.</li>
-              </ul>
-                    </li>
-                <li>Machine Learning Engineering
-              <ul class="work__list">
-                  <li>During the deployment of the model, a lot of discrepancies around feature calculation surfaced in the shadow validation phase.</li>
-                <li>Working with engineering team, four of such features were diagnosed as incorrectly being computed while logging the hotel booking data. This cleared up path for any blockers for deployment in future.</li>
-                </ul>
-                    </li>
-                  </ul>
-                      </li>
-                  </section>
-                  <section class="model_monitoring" id="model_monitoring">
-                  <li><p style="font-size:25px";><u>Hotel Monitoring Dashboard</u></p>
-                  <ul class="work__list">
-                      <li>Initiated a model monitoring dashboard effort with Machine Learning Engineering team to observe any deployed hotel sort models’ performance for hotel bookings made within top N positions of search page across various pivots. </li>
-                      <li>Airflow pipeline is triggered daily utilizing an ETL script using Apache Spark to pull data from Snowflake and Amazon S3 to produce data for monitoring model performance on a daily basis and dumping to Snowflake table. </li>
-                      <li>The Tableau dashboard is currently in production and used frequently by Product and Tech team and gave opportunity to stem out an analysis for an anomalous observation. </li>
-                  </ul>
-                      </li>
-                  </section>
-                  <section class="nps_survey" id="nps_survey">
-                  <li><p style="font-size:25px";><u>NPS Survey Analysis</u></p>
-                  <ul class="work__list">
-                      <li>In an effort to boost NPS scores, the use of WordClouds and LDA topic-modeling on the verbatim comments of Travel Managers and Travelers in NPS Survey, brought to light potential pain points.</li>
-                      <li>With the use of above pointers, various transaction level data sources were married to cross validate the hypothesis and eventually helped to carve out action items relating to online experience, payment systems and inventory management. </li>
-                      <li>Drilling deeper into the online behaviour, Adobe Omniture was used to summarize, in plots, the most commonly encountered web errors across different LOBs and gained traction with Product team to highlight areas of improvement to boost NPS scores. </li>
-                  </ul>
-                      </li> 
-                  </section>
-                  <section class="feature_exploration" id="feature_exploration">
-                  <li><p style="font-size:25px";><u>Hotel Sort Model Feature Exploration/Model Tuning</u></p>
-                  <ul class="work__list">
-                      <li>Evaluted opportunities with LightGBM as replacement of currently deployed RandomForest model, placing emphasis on optimizing model for ranking metric. This lead to discussions with Product team to replace the currently deployed model.</li>
-                      <li>Optimized currently deployed RandomForest model with stratified imputation and best set of parameters with a lift in AUC score by 2.41%.</li>
-                  </ul>
-                      </li> 
-                  </section>
-                  <section class="hotel_attach" id="hotel_attach">
-                  <li><p style="font-size:25px";><u>Flight-Hotel Attach</u></p>
-                  <ul class="work__list">
-                      <li>Working with voluminous transaction-level data in Adobe Omniture, and carrying out various ETL operations for funnel analysis of hotel attach, came up with intuitive visualizations to report user behaviours. From these, stemmed pointers for UX team to try A/B tests to boost user engagement on our website.</li>
-                      <li>Logging of brand loyalty came as a call to action for boosting hotel attach.</li>
-                  </ul>
-                      </li> 
-                  </section>
-                </ul>
-                <h4 style="font-size:30px";>Bank of New York Mellon Technology</h4>
-                <ul>
-                    <section class="ore" id="ore">
-                    <li><p style="font-size:25px";><u>Operational Risk Events</u></p>
-                  <ul class="work__list">
-                      <li>Key-phrases extracted from error log paragraphs and binned to 7 pre-defined categories using Sentence2Vec and ANNOY. Leading on end-to-end workflow resulted in project recover revenue of ~$60Million USD.</li>
-                  </ul>
-                      </li> 
-                    </section>
-                    <section class="releap" id="releap">
-                    <li><p style="font-size:25px";><u>Revenue Leakage Audit Platform</u></p>
-                  <ul class="work__list">
-                      <li>Template detection and extraction of fee and related computation phrases using K-means, N.E.R. and ‘dcoref’. Leakage reported for disparity of final charge with the original charged to BNY Mellon clients.</li>
-                  </ul>
-                      </li> 
-                    </section>
-                </ul>
-                <h3>Internships</h3>
-                    <ul>
-                <li><b>UiPath Inc</b>
-                  <ul class="work__list">
-                      <li>Worked on Inventory Management use-case with use of LightGBM and LSTM for the forecast of products facing a hike in demand next week along with exact units in hike.</li> 
-                      <li>The serving model was presented to one of the largest retail customers in the Middle East leading to final purchase.</li>
-                  </ul>
-                      </li> 
-                <li><b>Penn State University</b>
-                  <ul class="work__list">
-                      <li>Worked on research project by analysing multivariate time-series data, using Bayesian Neural Networks to predict cryptocurrency rates also involving Deep Learning techniques. </li>
-                  </ul>
-                      </li> 
-                <li><b>Bank of New York Mellon Technology</b>
-                  <ul class="work__list">
-                      <li>Using d3.js, developed a dashboard, that was integrated to company’s in-house tool to track the flow of funds across different stages.. The project aided in a permanent opportunity at the company.</li>
-                  </ul>
-                      </li>         
-                </ul>
-                
-                <h3>Graduate School - Academic Projects</h3>
-                    <ul>
-                <li><b>Analysis on Facebook Page Metrics</b>
-                  <ul class="work__list">
-                      <li>E.D.A., 1 Sample Z-Test and Hypotheses testing for key performance indicators (KPIs) believed to influence the success of posts on Facebook page of a Cosmetic Brand for year 2014.</li>
-                  </ul>
-                      </li> 
-                <li><b>Musical Face</b>
-                  <ul class="work__list">
-                      <li>Deep Learning project from the ground up, using sophisticated CNN and RNN models to play songs on Spotify based on the expression of the user.</li>
-                  </ul>
-                      </li> 
-                <li><b>SF Crime Classification</b>
-                  <ul class="work__list">
-                      <li>Performed analysis and prediction on data released by San Francisco government to classify crime resolution using RandomForest, LightGBM, and GridesearchCV techniques. Result is useful to prioritize crime based on historical trend of data.</li>
-                  </ul>
-                      </li>         
-                </ul>
-              
+      <div class="timeline-entry">
+        <div class="tl-meta">
+          <div class="tl-company">American Express GBT / Egencia</div>
+          <div class="tl-period">Jan 2023 – Present</div>
+          <span class="tl-badge">Current</span>
+        </div>
+        <div class="tl-content">
+          <div class="tl-role">Senior Machine Learning Engineer</div>
+          <div class="tl-projects">
+            <div class="tl-project">
+              <div class="tl-project-name">Agentic AI Platform</div>
+              <p>Built and productionized a DSPy-based ReAct Supervisor Agent (Python, FastAPI, A2A protocol) orchestrating flight, hotel, and checkout agents for Egencia's AI-powered business travel platform. Reduced end-to-end orchestration latency by ~30% via custom single-step ReAct execution.</p>
+              <span class="tl-impact">~15.1K requests/day · 10 locales</span>
             </div>
-              </td>
-              <td class="wordcloud_divs">
-              
-            <div class="work__image-box">
-                <table>
-                    <tr>
-                        <td>
-                <img src="./images/skills_wc.png" class="work__image" alt="Skills" />
-                            <p><i>Figure: Skills extensively used</i></p>
-                            </td>
-                        </tr>
-                    <tr>
-                        <td>
-                <img src="./images/tools_wc.png" class="work__image" alt="Tools" />
-                        <p><i>Figure: Tools extensively used</i></p>
-                        </td>
-                        </tr>
-
-                </table>
+            <div class="tl-project">
+              <div class="tl-project-name">AI Evaluation Framework</div>
+              <p>Built a Python evaluation framework for AI agents and LLM workflows — reusable scorers for trajectory accuracy, tool-call correctness, latency, token efficiency, and LLM-as-a-Judge assessment. Adopted as the org-wide benchmark methodology for agent launches. Achieved 87% tools_called_in_order accuracy on English benchmarks.</p>
             </div>
-                  </td>  
-              </tr>
-                  </table>
-          </div>
-
-          <div class="work__box">
-            <div class="work__text">
-              <h3>Databases</h3>
-              <p>
-                Databases or file formats used for executing direct SQL queries or connecting via Spark for ETL operations
-              </p>
-              <ul class="work__list">
-                <li>Amazon S3/Parquet files</li>
-                <li>AWS Athena</li>
-                <li>AWS Redshift</li>
-                <li>Snowflake</li>
-                <li>HDFS</li>
-              </ul>
-
-             
+            <div class="tl-project">
+              <div class="tl-project-name">Rental Car Ranking</div>
+              <p>Built a LightGBM ranking service using traveler intent, pricing, vehicle attributes, compliance, and yield features, combined with policy-aware post-processing for corporate compliance.</p>
+              <span class="tl-impact">+25% Recall@3 · +35% revenue vs rule-based baseline</span>
+            </div>
+            <div class="tl-project">
+              <div class="tl-project-name">Model Monitoring Platform</div>
+              <p>Designed and deployed a production monitoring platform for all seven ML models owned by the team — automated feature-drift, concept-drift, and retraining recommendations using rolling-window statistical comparisons. Proactively detected drift in rental-car ranking before measurable business degradation.</p>
+            </div>
+            <div class="tl-project">
+              <div class="tl-project-name">Explainable AI Platform</div>
+              <p>Productionized a hotel-ranking explainability framework combining SHAP feature attributions with Claude-powered natural-language reasoning, delivering business-friendly explanations that improved trust in AI-driven recommendations among enterprise travel arrangers.</p>
+            </div>
+            <div class="tl-project">
+              <div class="tl-project-name">Travel Disruption Manager</div>
+              <p>Built an AI-powered travel disruption concierge with personalized notification ranking, semantic caching, and real-time event detection using BERT embeddings, Elasticsearch, and automated news-ingestion pipelines.</p>
             </div>
           </div>
-
         </div>
       </div>
-    </section>
 
-
-    <section class="client" id="clients">
-      <div class="row">
-        <h2>Companies</h2>
-        <div class="client__logos">
-          <img src="./images/egencia.jpeg" class="client__logo" alt="Company 2" />
-          <img src="./images/uipath.png" class="client__logo" alt="Company 3" />
-          <img src="./images/BNY_Mellon.png" class="client__logo" alt="Company 1" />
-          <img src="./images/tata_steel.jpeg" class="client__logo" alt="Company 1" />
+      <div class="timeline-entry">
+        <div class="tl-meta">
+          <div class="tl-company">Expedia Group / Egencia</div>
+          <div class="tl-period">Feb 2020 – Dec 2022</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-role">Data Scientist I → II</div>
+          <div class="tl-projects">
+            <div class="tl-project">
+              <div class="tl-project-name">Hotel Ranking · SmartMix</div>
+              <p>Developed multiple generations of hotel-ranking systems; replaced Random Forest with LightGBM learning-to-rank models (NDCG-optimized). Built behavioral hotel embeddings from Adobe Omniture activity signals to address cold-start.</p>
+              <span class="tl-impact">~717K searches/day · +1.5–4% booking revenue · +3% from embeddings</span>
+            </div>
+            <div class="tl-project">
+              <div class="tl-project-name">Model Monitoring Dashboard</div>
+              <p>Initiated a model monitoring dashboard with the ML Engineering team. Daily Airflow pipeline (Spark ETL, Snowflake, S3) feeding a Tableau dashboard used by Product and Tech for tracking model performance across search positions and pivots.</p>
+            </div>
+            <div class="tl-project">
+              <div class="tl-project-name">NPS Survey Analysis</div>
+              <p>Applied WordCloud and LDA topic modeling to NPS verbatim comments, cross-validated with transaction-level data to surface action items around online experience, payment systems, and inventory management.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- ***** About ***** -->
-
-    <section class="about" id="about">
-      <div class="row">
-        <h2>About Me</h2>
-          
-        <div class="about__content">
-            <table>
-              <tr>
-                  <td>
-          <div class="about__text">
-            <p>
-              Data Scientist staying close to the nature in Pudget sound focused on data driven decision making. Masters in Data Analytics carved out the path to look into statistics while maintaining abstraction of business into statistical modeling.
-                
-            </p>
-          </div>
-                </td>
-                      <td>
-          <div class="about__photo-container">
-            <img class="about__photo" src="./images/northern_cascade.jpeg" alt="" />
-          </div>
-              </td>
-                  </tr>
-              </table>
+      <div class="timeline-entry">
+        <div class="tl-meta">
+          <div class="tl-company">BNY Mellon Technology</div>
+          <div class="tl-period">Jul 2015 – Jun 2018</div>
+        </div>
+        <div class="tl-content">
+          <div class="tl-role">Data Scientist II</div>
+          <div class="tl-projects">
+            <div class="tl-project">
+              <div class="tl-project-name">Operational Risk Analytics</div>
+              <p>Led end-to-end NLP pipeline extracting key-phrases from error logs and classifying into 7 operational risk categories using Sentence2Vec and ANNOY.</p>
+              <span class="tl-impact">~$60M recovered value</span>
             </div>
+            <div class="tl-project">
+              <div class="tl-project-name">Revenue Leakage Audit</div>
+              <p>Template detection and extraction of fee and computation phrases using K-means, NER, and coreference resolution to surface billing disparities for BNY Mellon clients.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
 
-  <!-- ***** Contact ***** -->
+    </div>
+  </div>
+</section>
 
-  <section class="contact" id="contact">
-    <div class="row">
-      <h2>Get in Touch</h2>
-      <div class="contact__info">
+<!-- ── Projects ── -->
+<section id="work">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Selected Projects</h2>
+    </div>
+
+    <!-- AmexGBT / 2023-present -->
+    <div class="projects-group">
+      <div class="group-label">AmexGBT / Egencia · 2023 – Present</div>
+      <div class="projects-grid">
+
+        <div class="project-card" style="--card-accent: #1a5c3a;">
+          <span class="card-tag">Agentic AI</span>
+          <h3>ReAct Supervisor Agent</h3>
+          <p>DSPy-based ReAct orchestration layer coordinating flight, hotel, and checkout sub-agents via the A2A protocol. Custom single-step execution eliminated redundant LLM extraction stages.</p>
+          <div class="card-metrics">
+            <span class="metric-pill highlight">−30% latency</span>
+            <span class="metric-pill">15.1K req/day</span>
+            <span class="metric-pill">10 locales</span>
+            <span class="metric-pill">DSPy · FastAPI</span>
+          </div>
+        </div>
+
+        <div class="project-card" style="--card-accent: #1c4a7a;">
+          <span class="card-tag" style="--tag-bg:#e8f0fa;--tag-color:#1c4a7a;">Evaluation</span>
+          <h3>AI Evaluation Framework</h3>
+          <p>Organization-wide evaluation platform for LLM agents — reusable scorers for trajectory accuracy, tool-call correctness, cost efficiency, and LLM-as-a-Judge quality. MLflow-backed experiment tracking with dynamic date-refresh tooling for 71 benchmark conversations.</p>
+          <div class="card-metrics">
+            <span class="metric-pill highlight">87% tool-order accuracy</span>
+            <span class="metric-pill">MLflow · DSPy</span>
+          </div>
+        </div>
+
+        <div class="project-card" style="--card-accent: #c9902a;">
+          <span class="card-tag" style="--tag-bg:#fdf4e3;--tag-color:#7a5c10;">Ranking</span>
+          <h3>Rental Car Ranking Platform</h3>
+          <p>LightGBM ranking service using traveler intent, pricing, vehicle attributes, compliance, and yield signals — combined with policy-aware post-processing to enforce corporate compliance and negotiated-rate prioritization.</p>
+          <div class="card-metrics">
+            <span class="metric-pill highlight">+25% Recall@3</span>
+            <span class="metric-pill highlight">+35% revenue</span>
+            <span class="metric-pill">LightGBM · SageMaker</span>
+          </div>
+        </div>
+
+        <div class="project-card" style="--card-accent: #6b3fa0;">
+          <span class="card-tag" style="--tag-bg:#f0eafc;--tag-color:#6b3fa0;">Monitoring</span>
+          <h3>ML Model Monitoring Platform</h3>
+          <p>Production monitoring covering all 7 team-owned ML models. Automated feature-drift and concept-drift detection via rolling-window statistical tests, with retraining recommendations triggered before business degradation occurs.</p>
+          <div class="card-metrics">
+            <span class="metric-pill">7 models covered</span>
+            <span class="metric-pill">Snowflake · Databricks</span>
+          </div>
+        </div>
+
+        <div class="project-card" style="--card-accent: #1a5c3a;">
+          <span class="card-tag">Explainability</span>
+          <h3>Hotel Ranking Explainability</h3>
+          <p>Productionized explainability framework pairing SHAP feature attributions with Claude-powered natural-language reasoning to generate business-friendly explanations for enterprise travel arrangers, improving trust in AI-driven recommendations.</p>
+          <div class="card-metrics">
+            <span class="metric-pill">SHAP · Claude API</span>
+            <span class="metric-pill">Enterprise trust</span>
+          </div>
+        </div>
+
+        <div class="project-card" style="--card-accent: #1c4a7a;">
+          <span class="card-tag" style="--tag-bg:#e8f0fa;--tag-color:#1c4a7a;">NLP / Real-time</span>
+          <h3>Travel Disruption Manager</h3>
+          <p>AI-powered disruption concierge with personalized notification ranking, semantic caching, and real-time event detection. Automated news-ingestion pipelines feed BERT embeddings indexed in Elasticsearch for near-instant disruption alerting.</p>
+          <div class="card-metrics">
+            <span class="metric-pill">BERT · Elasticsearch</span>
+            <span class="metric-pill">Real-time</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Expedia era -->
+    <div class="projects-group">
+      <div class="group-label">Expedia Group / Egencia · 2020 – 2022</div>
+      <div class="projects-grid">
+
+        <div class="project-card" style="--card-accent: #c9902a;">
+          <span class="card-tag" style="--tag-bg:#fdf4e3;--tag-color:#7a5c10;">Ranking</span>
+          <h3>Hotel Sort · SmartMix v2</h3>
+          <p>Replaced Random Forest with LightGBM learning-to-rank (NDCG-optimized) for hotel search page ordering. Built behavioral hotel embeddings from Adobe Omniture signals to solve cold-start for new inventory.</p>
+          <div class="card-metrics">
+            <span class="metric-pill highlight">+1.5–4% booking revenue</span>
+            <span class="metric-pill highlight">+3% from embeddings</span>
+            <span class="metric-pill">717K searches/day</span>
+            <span class="metric-pill">LightGBM · A/B tested</span>
+          </div>
+        </div>
+
+        <div class="project-card" style="--card-accent: #6b3fa0;">
+          <span class="card-tag" style="--tag-bg:#f0eafc;--tag-color:#6b3fa0;">Monitoring</span>
+          <h3>Hotel Model Monitoring Dashboard</h3>
+          <p>End-to-end Airflow pipeline (Spark ETL, Snowflake, S3) producing daily model performance data across search positions and pivots. Tableau dashboard actively used by Product and Tech teams.</p>
+          <div class="card-metrics">
+            <span class="metric-pill">Airflow · Spark</span>
+            <span class="metric-pill">Snowflake · Tableau</span>
+          </div>
+        </div>
+
+        <div class="project-card" style="--card-accent: #1c4a7a;">
+          <span class="card-tag" style="--tag-bg:#e8f0fa;--tag-color:#1c4a7a;">NLP · Analytics</span>
+          <h3>NPS Survey Analysis</h3>
+          <p>LDA topic modeling and WordCloud analysis on NPS verbatim data, cross-validated with transaction-level sources. Adobe Omniture web-error analysis surfaced UX improvement areas, gaining Product team traction.</p>
+          <div class="card-metrics">
+            <span class="metric-pill">LDA · NLP</span>
+            <span class="metric-pill">Adobe Omniture</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BNY & Academic -->
+    <div class="projects-group">
+      <div class="group-label">BNY Mellon · 2015–2018 · Academic</div>
+      <div class="projects-grid">
+
+        <div class="project-card" style="--card-accent: #c9902a;">
+          <span class="card-tag" style="--tag-bg:#fdf4e3;--tag-color:#7a5c10;">NLP · Risk</span>
+          <h3>Operational Risk Classifier</h3>
+          <p>Sentence2Vec + ANNOY pipeline extracting key-phrases from error log paragraphs and binning to 7 operational risk categories. End-to-end leadership from ingestion through deployment.</p>
+          <div class="card-metrics">
+            <span class="metric-pill highlight">~$60M recovered</span>
+            <span class="metric-pill">Sentence2Vec · ANNOY</span>
+          </div>
+        </div>
+
+        <div class="project-card" style="--card-accent: #1c4a7a;">
+          <span class="card-tag" style="--tag-bg:#e8f0fa;--tag-color:#1c4a7a;">NLP · FinTech</span>
+          <h3>Revenue Leakage Audit</h3>
+          <p>Template detection and extraction of fee computation phrases using K-means, NER, and coreference resolution to surface billing disparities between final charges and contracted amounts.</p>
+          <div class="card-metrics">
+            <span class="metric-pill">K-means · NER</span>
+            <span class="metric-pill">dcoref</span>
+          </div>
+        </div>
+
+        <div class="project-card" style="--card-accent: #1a5c3a;">
+          <span class="card-tag">Deep Learning</span>
+          <h3>Musical Face</h3>
+          <p>Academic deep-learning project using CNN + RNN to play Spotify songs based on real-time facial expression recognition from webcam input.</p>
+          <div class="card-metrics">
+            <span class="metric-pill">CNN · RNN</span>
+            <span class="metric-pill">Penn State</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Skills ── -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Technical Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-name">Languages & Frameworks</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Spark (PySpark)</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">DSPy</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">ML & AI</div>
+        <div class="skill-tags">
+          <span class="skill-tag">LightGBM</span>
+          <span class="skill-tag">LLMs</span>
+          <span class="skill-tag">BERT</span>
+          <span class="skill-tag">SHAP</span>
+          <span class="skill-tag">Learning-to-Rank</span>
+          <span class="skill-tag">Agentic AI</span>
+          <span class="skill-tag">RAG</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">MLOps & Infra</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS SageMaker</span>
+          <span class="skill-tag">MLflow</span>
+          <span class="skill-tag">Airflow</span>
+          <span class="skill-tag">Databricks</span>
+          <span class="skill-tag">Docker</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">Data Stores</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Snowflake</span>
+          <span class="skill-tag">Amazon S3</span>
+          <span class="skill-tag">Elasticsearch</span>
+          <span class="skill-tag">AWS Redshift</span>
+          <span class="skill-tag">AWS Athena</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">Experimentation</div>
+        <div class="skill-tags">
+          <span class="skill-tag">A/B Testing</span>
+          <span class="skill-tag">Causal Inference</span>
+          <span class="skill-tag">NDCG / Ranking Metrics</span>
+          <span class="skill-tag">Statistical Testing</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">Visualization & BI</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Tableau</span>
+          <span class="skill-tag">Adobe Omniture</span>
+          <span class="skill-tag">d3.js</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Companies ── -->
+<section id="clients">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Companies</h2>
+    </div>
+    <div class="companies-row">
+      <div class="company-item">
+        <span class="company-text-logo">AmexGBT</span>
+        <span class="company-name">2023 – Present</span>
+      </div>
+      <div class="company-item">
+        <img src="images/egencia.jpeg" alt="Egencia" class="company-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="company-text-logo" style="display:none;">Egencia</span>
+        <span class="company-name">2020 – 2022</span>
+      </div>
+      <div class="company-item">
+        <img src="images/BNY_Mellon.png" alt="BNY Mellon" class="company-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="company-text-logo" style="display:none;">BNY Mellon</span>
+        <span class="company-name">2015 – 2018</span>
+      </div>
+      <div class="company-item">
+        <img src="images/uipath.png" alt="UiPath" class="company-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="company-text-logo" style="display:none;">UiPath</span>
+        <span class="company-name">Intern 2019</span>
+      </div>
+      <div class="company-item">
+        <span class="company-text-logo">Penn State</span>
+        <span class="company-name">M.P.S. · Top 5%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>About</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Senior MLE focused on<br>AI systems that matter in production.</h3>
         <p>
-          
+          I'm a Senior Machine Learning Engineer with 11 years of experience building and operating
+          production AI systems across travel and financial services. My work spans the full ML lifecycle —
+          from feature engineering and model training to deployment, monitoring, and iterative improvement.
         </p>
-        <a href="mailto:26achyutanandjha@gmail.com" class="btn">26achyutanandjha@gmail.com</a>
+        <p>
+          Currently at AmexGBT/Egencia, I'm building the next generation of agentic AI for business travel:
+          orchestrating LLM-powered agents, establishing evaluation infrastructure, and designing ranking systems
+          that influence thousands of daily decisions for enterprise travelers across 10 locales.
+        </p>
+        <p>
+          I hold an M.P.S. in Data Analytics from Penn State University (Top 5%) and a B.Tech. in Computer
+          Science from KIIT University. Based in the Seattle metro area, where I stay close to the mountains
+          when not thinking about latency or NDCG curves.
+        </p>
+        <div style="margin-top:2rem;">
+          <a href="mailto:26achyutanandjha@gmail.com" class="btn btn-primary">Get in touch</a>
+        </div>
+      </div>
+      <div>
+        <img
+          src="images/northern_cascade.jpeg"
+          alt="Northern Cascades, Seattle area"
+          class="about-photo"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+        <div class="about-photo-placeholder" style="display:none;">
+          <span>ANJ</span>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ***** Footer ***** -->
-
-  <footer role="contentinfo" class="footer">
-    <div class="row">
-      <!-- Update the links to point to your accounts -->
-      <ul class="footer__social-links">
-        <li class="footer__social-link-item">
-          <a href="https://twitter.com/jha_achyuta/" title="Link to Twitter Profile">
-            <img src="./images/twitter.svg" class="footer__social-image" alt="Twitter">
-          </a>
-        </li>
-        <li class="footer__social-link-item">
-          <a href="https://github.com/achyuta26/" title="Link to Github Profile">
-            <img src="./images/github.svg" class="footer__social-image" alt="Github">
-          </a>
-        </li>
-        <li class="footer__social-link-item">
-          <a href="https://www.linkedin.com/in/achyuta-nand-jha/">
-            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
-          </a>
-        </li>
-      </ul>
-
+<!-- ── Contact ── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2>Get in Touch</h2>
     </div>
-  </footer>
+    <div class="contact-inner">
+      <p>
+        Open to Senior MLE and Staff MLE opportunities in AI/ML — particularly teams building
+        agentic systems, evaluation platforms, or production ranking and recommendation at scale.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:26achyutanandjha@gmail.com" class="btn btn-primary">26achyutanandjha@gmail.com</a>
+        <a href="https://www.linkedin.com/in/achyuta-nand-jha/" target="_blank" class="btn btn-outline">LinkedIn</a>
+        <a href="https://github.com/achyuta26" target="_blank" class="btn btn-outline">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
-  </a>
-  <script src="./index.js"></script>
+<!-- ── Footer ── -->
+<footer>
+  Achyuta Nand Jha · Seattle, WA · Senior Machine Learning Engineer
+</footer>
+
 </body>
-
 </html>
