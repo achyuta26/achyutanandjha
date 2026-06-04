@@ -459,11 +459,12 @@
       margin-bottom: 1rem;
     }
     .about-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      border-radius: var(--radius);
-      display: block;
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius);
+  display: block;
     }
     .about-photo-placeholder {
       width: 100%;
@@ -916,7 +917,9 @@
     </div>
     <div class="companies-row">
       <div class="company-item">
-        <span class="company-text-logo">AmexGBT</span>
+        <img src="images/amexgbt.png" alt="American Express Global Business Travel" class="company-logo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <span class="company-text-logo" style="display:none;">AmexGBT</span>
         <span class="company-name">2023 – Present</span>
       </div>
       <div class="company-item">
